@@ -33,7 +33,7 @@ contract Ballot {
     // checks if voting period is ended.
     modifier voteEnded() {
         require(
-            block.timestamp > startTime + 5 minutes,
+            block.timestamp < startTime + 5 minutes,
             "The voting period is ended"
         );
         _;
